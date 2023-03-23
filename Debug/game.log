@@ -1,0 +1,11 @@
+﻿  Game.cpp
+C:\Users\alvin\Desktop\PROJETS\JEU\cpp-tryouts\Game.h(26,10): error C3646: 't' : spécificateur de substitution inconnu
+C:\Users\alvin\Desktop\PROJETS\JEU\cpp-tryouts\Game.h(26,11): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+C:\Users\alvin\Desktop\PROJETS\JEU\cpp-tryouts\Game.cpp(35,8): error C2039: 't' n'est pas membre de 'Game'
+C:\Users\alvin\Desktop\PROJETS\JEU\cpp-tryouts\Game.h(9,7): message : voir la déclaration de 'Game'
+C:\Users\alvin\Desktop\PROJETS\JEU\cpp-tryouts\Game.cpp(36,11): error C2065: 't' : identificateur non déclaré
+C:\Users\alvin\Desktop\PROJETS\JEU\cpp-tryouts\Game.cpp(67,3): error C2065: 's' : identificateur non déclaré
+  main.cpp
+C:\Users\alvin\Desktop\PROJETS\JEU\cpp-tryouts\Game.h(26,10): error C3646: 't' : spécificateur de substitution inconnu
+C:\Users\alvin\Desktop\PROJETS\JEU\cpp-tryouts\Game.h(26,11): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+  Génération de code en cours...

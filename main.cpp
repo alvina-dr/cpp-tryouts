@@ -15,6 +15,9 @@ int main()
 	//VARIABLES
 	RenderWindow* window = new RenderWindow(VideoMode(800, 600), "GAME", Style::Titlebar | Style::Close);
 	window->setFramerateLimit(60);
+	View view(sf::Vector2f(350, 300), Vector2f(800, 600));
+
+
 	Texture texPlayer, texPlatform, texBackground;
 	texPlayer.loadFromFile("Resources/sprite.png");
 	texPlatform.loadFromFile("Resources/tileset-terrain.png");
@@ -37,6 +40,7 @@ int main()
 	playerS.setOrigin(playerS.getTextureRect().width / 2, playerS.getTextureRect().height / 2);
 	bool onGround = true, rightPressed = false, leftPressed = false;
 	int platformNumber = 10;
+	int cameraMaxOffset = 50;
 
 	//TEXT
 	Text debugText;
@@ -65,7 +69,6 @@ int main()
 				window->close();
 				break;
 			case Event::KeyPressed:
-				//horizontal
 				if (ev.key.code == Keyboard::Left) {
 					if (rightPressed) rightPressed = false;
 					leftPressed = true;
@@ -78,7 +81,6 @@ int main()
 					dx = 1;
 					playerS.setScale(abs(playerS.getScale().x), playerS.getScale().y);
 				}
-
 				if (ev.key.code == Keyboard::Space) {
 					//JUMP
 					if (onGround) {
@@ -117,7 +119,28 @@ int main()
 		player[0].x += dx * 5;
 
 		Color color(51, 50, 61, 1);
+
+
 		window->clear(color);
+
+
+		//CAMERA CONTROLLER
+		if (view.getCenter().x - player[0].x > cameraMaxOffset){
+			view.setCenter(Vector2f(player[0].x+cameraMaxOffset, view.getCenter().y));
+		}
+		else if (view.getCenter().x - player[0].x < -cameraMaxOffset)  {
+			view.setCenter(Vector2f(player[0].x- cameraMaxOffset, view.getCenter().y));
+		}
+		if (view.getCenter().y - player[0].y > cameraMaxOffset) {
+			view.setCenter(Vector2f(view.getCenter().x, player[0].y + cameraMaxOffset));
+		}
+		else if (view.getCenter().y - player[0].y < -cameraMaxOffset) {
+			view.setCenter(Vector2f(view.getCenter().x, player[0].y - cameraMaxOffset));
+		}
+		view.setViewport(sf::FloatRect(0, 0, 1, 1));
+		window->setView(view);
+
+
 		window->draw(backgroundS);
 
 		playerS.setPosition(player[0].x, player[0].y);

@@ -10,24 +10,24 @@ class Game
 {
 
 private:
-	sf::RenderWindow* window;
-	sf::Event ev;
-	void initVariables();
-	void initWindow();
+	//sf::RenderWindow* window;
+	//sf::Event ev;
+	//void initVariables();
+	//void initWindow();
 
 public:
-	Game();
-	virtual ~Game();
+	//Game();
+	//virtual ~Game();
 
-	void update();
-	void render();
-	void pollEvents();
-	const bool running() const;
-	Texture t;
-	int dx = 0;
-	int dy = 0;
-	struct Point {
-		int x, y;
-	} a[4], b[4];
+	//void update();
+	//void render();
+	//void pollEvents();
+	//const bool running() const;
+	//Texture t;
+	//int dx = 0;
+	//int dy = 0;
+	//struct Point {
+	//	int x, y;
+	//} a[4], b[4];
 };
 

@@ -1,4 +1,4 @@
-#include "Game.h"
+#include "Grid.h"
 
 using namespace sf;
 

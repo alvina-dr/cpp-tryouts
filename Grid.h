@@ -6,7 +6,7 @@
 #include<SFML/Audio.hpp>
 #include<SFML/Network.hpp>
 
-class Game
+class Grid
 {
 
 private:
